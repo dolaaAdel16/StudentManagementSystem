@@ -13,7 +13,7 @@ namespace StudentManagementSystem.Entities
     {
         // InstructorId(PK) · FullName · one-to-many with Course(bonus: many-to-many if a course can have more than one instructor)
 
-        public int Id { get; set; }
+        public int InstructorId { get; set; }
         public string FName { get; set; }
         public string LName { get; set; }
         public ICollection<CourseInstructor> CourseInstructors { get; set; } = new List<CourseInstructor>();

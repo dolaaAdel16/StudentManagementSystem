@@ -13,7 +13,7 @@ namespace StudentManagementSystem.Entities
         public int Id { get; set; } 
         public string Title { get; set; }
         public int Credits { get; set; }
-        public string Description { get; set; }
+        public string? Description { get; set; }
         public ICollection<Enrollment> Enrollments { get; set; } = new List<Enrollment>();
         public ICollection<CourseInstructor> CourseInstructors { get; set; } = new List<CourseInstructor>();
     }

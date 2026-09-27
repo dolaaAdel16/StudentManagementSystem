@@ -12,8 +12,8 @@ namespace StudentManagementSystem.Entities
         // StudentId(PK) · FullName · Email(unique index) · DateOfBirth · EnrollmentDate · nav: Enrollments
 
         public int StudentId { get; set; }
-        public string Fname { get; set; }
-        public string Lname { get; set; }
+        public string FName { get; set; }
+        public string LName { get; set; }
         public string Email { get; set; }
         public DateTime EnrollmentDate { get; set; }
         public ICollection<Enrollment> Enrollments { get; set; } = new List<Enrollment>();
