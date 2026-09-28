@@ -1,10 +1,22 @@
-﻿namespace StudentManagementSystem
+﻿using Microsoft.EntityFrameworkCore;
+using StudentManagementSystem.Data;
+
+namespace StudentManagementSystem
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("");
+            var options = new DbContextOptionsBuilder<AppDbContext>()
+            .UseSqlServer(
+                "Server=.;Database=StudentManagementDb;Trusted_Connection=True;TrustServerCertificate=True;"
+            )
+            .Options;
+
+
+            using var context = new AppDbContext();
+
+
         }
     }
 }
