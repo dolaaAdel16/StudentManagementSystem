@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StudentManagementSystem.Services
 {
-    internal class EnrollmentService
+    public class EnrollmentService
     {
     }
 }

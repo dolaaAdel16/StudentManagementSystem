@@ -8,5 +8,6 @@ namespace StudentManagementSystem.Services
 {
     public class CourseInstructorService
     {
+        
     }
 }
