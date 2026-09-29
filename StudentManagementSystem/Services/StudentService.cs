@@ -56,7 +56,7 @@ namespace StudentManagementSystem.Services
             if (existingstudent == null)
                 return;
 
-            _context.Students.Remove(existingstudent);
+            existingstudent.IsDeleted = true;
 
             await _context.SaveChangesAsync();
 
@@ -80,6 +80,17 @@ namespace StudentManagementSystem.Services
                 .Include(s => s.Enrollments)
                 .Where(s => s.StudentId == id)
                 .FirstOrDefaultAsync();
+
+            return result;
+        }
+
+        public async Task<List<Student>> GetDeletedStudentsAsync()
+        {
+            var result = await _context.Students
+               .AsNoTracking()
+               .IgnoreQueryFilters()
+               .Where(s => s.IsDeleted)
+               .ToListAsync();
 
             return result;
         }

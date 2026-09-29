@@ -28,6 +28,7 @@ namespace StudentManagementSystem.Data.Configuration
                 .HasForeignKey(x => x.StudentId)
                 .OnDelete(DeleteBehavior.Cascade);
 
+
             builder.ToTable("Students");
         }
     }

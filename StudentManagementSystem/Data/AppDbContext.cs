@@ -32,6 +32,9 @@ namespace StudentManagementSystem.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
+
+            modelBuilder.Entity<Student>().HasQueryFilter(s => !s.IsDeleted);
+
         }
     }
 }
